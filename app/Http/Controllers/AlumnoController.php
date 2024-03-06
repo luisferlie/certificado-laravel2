@@ -55,11 +55,15 @@ class AlumnoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Alumno $alumno)
 
+        public function edit(Alumno $alumno)
     {
+
         $idiomas_disponibles=config("idiomas.idiomas");
-        return view ("alumnos.edit", compact("alumno","idiomas_disponibles"));
+        $alumnoJson = $alumno->toJson();
+        $idiomasDisponiblesJson=json_encode($idiomas_disponibles);
+
+        return view ("alumnos.edit", compact("alumnoJson","idiomasDisponiblesJson"));
 
     }
 

@@ -1,8 +1,15 @@
+import './bootstrap';
+import '../css/app.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Tabla from './Pages_React/Tabla.jsx'; // Asegúrate de ajustar la ruta de importación
+import EditarAlumno from './Pages_React/EditarAlumno';
 
-if (document.getElementById('react-root')) {
-    const root = ReactDOM.createRoot(document.getElementById('react-root'));
-    root.render(<Tabla />);
-}
+
+
+// Encuentra un elemento en tu HTML donde quieras montar el componente de React
+const el = document.getElementById('react-app');
+// Asegúrate de que las variables están definidas
+    if (document.getElementById('react-app') && typeof alumnoInicial !== 'undefined' && typeof idiomasDisponibles !== 'undefined') {
+        ReactDOM.render(<EditarAlumno alumnoInicial={JSON.parse(alumnoInicial)} idiomasDisponibles={JSON.parse(idiomasDisponibles)} />, document.getElementById('react-app'));
+    }
