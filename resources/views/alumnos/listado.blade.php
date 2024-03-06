@@ -41,7 +41,7 @@
         //     );
         // }
     </script>
-    <div class="max-h-full flex flex-col justify-center items-center">
+    <div class="max-h-full flex flex-col justify-center items-center ">
         <h1 class=" text-5xl uppercase text-blue-700">Listado de alumnos</h1>
 
 
@@ -84,7 +84,7 @@
 
         @endif
         <a href="/alumnos/create" class="btn btn-primary  text-3xl"> Añadir Alumno</a>
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto ">
             <table class="table p-5 w-3/4 table-pin-rows text-2xl bg-amber-100 mt-5">
                 <tr>
                     <th>nombre</th>
@@ -95,7 +95,7 @@
                 </tr>
 
                 @foreach($alumnos as $alumno)
-                    <tr class="hover:bg-green-600 hover:cursor-pointer" onclick="editarFila({{$alumno->id}})">
+                    <tr class="hover:bg-blue-200 hover:cursor-pointer text-sm" onclick="editarFila({{$alumno->id}})">
 
                     <td><a class="hover:bg-green-500"
                            href="{{route("alumnos.show", $alumno->id)}}">{{$alumno->nombre}}</a></td>
@@ -142,7 +142,7 @@
     </div>
 
     {{--    {{ $alumnos->links() }}--}}
-    {{ $alumnos->links() }}
+    <div class="flex justify-left offset-10 ml-32">{{ $alumnos->links() }}</div>
     {{--    <script>--}}
     {{--        window.onload=()=>--}}
     {{--            setTimeout(()=>--}}

@@ -14,7 +14,7 @@ use App\Http\Controllers\AlumnoController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::view("main", "main");
+Route::view("/main", "main");
 //Route::get("main", function(){
 //    return view ("main");
 //});
@@ -22,7 +22,7 @@ Route::view("main", "main");
 //Route::get("main", [MainController::class=>"index"]);
 
 
-Route::view("about", "about");
+Route::view("/about", "about");
 
 Route::resource("alumnos", AlumnoController::class);
 Route::resource("idiomas", \App\Http\Controllers\IdiomaController::class);
